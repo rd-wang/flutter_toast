@@ -1,36 +1,34 @@
-import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:oktoast/oktoast.dart' as ok;
+import 'package:roobo_toast/toast/toast_widget.dart';
 
-enum ToastType { Success, Info, Error, Toast, Loading, Progress }
+enum ToastType {
+  Success,
+  Info,
+  Error,
+  Toast,
+}
 
 class ToastUtil {
-
-  static showToast(String msg, {ToastType type}) {
-    if (type == null) {
-      return EasyLoading.showInfo(msg);
-    }
+  static showToast(String msg, {ToastType type = ToastType.Toast}) {
     switch (type) {
       case ToastType.Success:
-        EasyLoading.showSuccess(msg);
-        break;
-      case ToastType.Info:
-        EasyLoading.showInfo(msg);
+        ok.showToastWidget(ToastIconWidget(
+          msg: msg,
+          flag: true,
+        ));
         break;
       case ToastType.Error:
-        EasyLoading.showError(msg);
+        ok.showToastWidget(ToastIconWidget(
+          msg: msg,
+          flag: false,
+        ));
         break;
+      case ToastType.Info:
       case ToastType.Toast:
-        EasyLoading.showToast(msg);
-        break;
-      case ToastType.Loading:
-        EasyLoading.show(status: msg);
-        break;
-      case ToastType.Progress:
-        EasyLoading.showProgress(0.3, status: msg);
+        ok.showToastWidget(ToastInfoWidget(
+          msg: msg,
+        ));
         break;
     }
-  }
-
-  static dismiss() {
-    EasyLoading.dismiss();
   }
 }
