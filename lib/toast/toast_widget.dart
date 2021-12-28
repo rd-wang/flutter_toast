@@ -20,7 +20,7 @@ class ToastInfoWidget extends StatelessWidget {
           child: ClipRect(
             child: Text(
               msg,
-              style: TextStyle(fontSize: 14, color: Colors.white),
+              style: TextStyle(fontSize: 14, color: Colors.white, decoration: TextDecoration.none),
               textAlign: TextAlign.center,
             ),
           ),
@@ -57,7 +57,7 @@ class ToastIconWidget extends StatelessWidget {
             padding: const EdgeInsets.only(left: 8.0),
             child: Text(
               msg,
-              style: TextStyle(fontSize: 14, color: Colors.white),
+              style: TextStyle(fontSize: 14, color: Colors.white, decoration: TextDecoration.none),
               textAlign: TextAlign.center,
             ),
           ),
