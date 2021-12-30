@@ -21,6 +21,7 @@ class ToastInfoWidget extends StatelessWidget {
             child: Text(
               msg,
               style: TextStyle(fontSize: 14, color: Colors.white, decoration: TextDecoration.none, fontWeight: FontWeight.w400),
+              textAlign: TextAlign.center,
             ),
           ),
         ),
@@ -56,11 +57,14 @@ class ToastIconWidget extends StatelessWidget {
               size: 16,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 4.0),
-            child: Text(
-              msg,
-              style: TextStyle(fontSize: 14, color: Colors.white, decoration: TextDecoration.none, fontWeight: FontWeight.w400),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 4.0),
+              child: Text(
+                msg,
+                style: TextStyle(fontSize: 14, color: Colors.white, decoration: TextDecoration.none, fontWeight: FontWeight.w400),
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
         ],
