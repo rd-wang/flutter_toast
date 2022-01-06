@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ToastInfoWidget extends StatelessWidget {
   final String msg;
@@ -48,6 +49,7 @@ class ToastIconWidget extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
             padding: EdgeInsets.only(top: 3),
@@ -57,7 +59,7 @@ class ToastIconWidget extends StatelessWidget {
               size: 16,
             ),
           ),
-          Expanded(
+          Flexible(
             child: Padding(
               padding: const EdgeInsets.only(left: 4.0),
               child: Text(
