@@ -5,26 +5,31 @@ enum ToastType {
   Success,
   Info,
   Error,
-  Toast,
+  Warning,
 }
 
 class ToastUtil {
-  static showToast(String msg, {ToastType type = ToastType.Toast}) {
+  static showToast(String msg, {ToastType type = ToastType.Info}) {
     switch (type) {
       case ToastType.Success:
         ok.showToastWidget(ToastIconWidget(
           msg: msg,
-          flag: true,
+          resString: "img/succeed.png",
         ));
         break;
       case ToastType.Error:
         ok.showToastWidget(ToastIconWidget(
           msg: msg,
-          flag: false,
+          resString: "img/error.png",
+        ));
+        break;
+      case ToastType.Warning:
+        ok.showToastWidget(ToastIconWidget(
+          msg: msg,
+          resString: "img/warning.png",
         ));
         break;
       case ToastType.Info:
-      case ToastType.Toast:
         ok.showToastWidget(ToastInfoWidget(
           msg: msg,
         ));

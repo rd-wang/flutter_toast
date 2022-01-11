@@ -33,9 +33,9 @@ class ToastInfoWidget extends StatelessWidget {
 
 class ToastIconWidget extends StatelessWidget {
   final String msg;
-  final bool flag;
+  final String resString;
 
-  const ToastIconWidget({@required this.msg, this.flag = true, Key key}) : super(key: key);
+  const ToastIconWidget({@required this.msg, this.resString = "img/warning.png", Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,10 +53,11 @@ class ToastIconWidget extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(top: 3),
-            child: Icon(
-              flag ? Icons.check_circle : Icons.cancel,
-              color: Colors.white,
-              size: 16,
+            child: Image.asset(
+              resString,
+              package: 'roobo_toast',
+              width: 14,
+              height: 14,
             ),
           ),
           Flexible(
