@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 class ToastInfoWidget extends StatelessWidget {
   final String msg;
 
-  const ToastInfoWidget({@required this.msg, Key key}) : super(key: key);
+  const ToastInfoWidget({required this.msg, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class ToastIconWidget extends StatelessWidget {
   final String msg;
   final String resString;
 
-  const ToastIconWidget({@required this.msg, this.resString = "img/warning.png", Key key}) : super(key: key);
+  const ToastIconWidget({required this.msg, this.resString = "img/warning.png", Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
